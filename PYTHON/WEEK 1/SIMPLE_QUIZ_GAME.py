@@ -14,14 +14,14 @@ def quiz():
 
     quiz1 = (
         input(
-            "Which of the following is not a variable:\nA) name\nB) 1name\nC) na_me\nAnswer: "
+            "\nWhich of the following is not a variable:\nA) name\nB) 1name\nC) na_me\nAnswer: "
         )
         .strip()
         .upper()
     )
-    quiz2 = input("Is moana 2 out?:\nA) Yes\nB) No\nAnswer: ").strip().upper()
+    quiz2 = input("\nIs moana 2 out?:\nA) Yes\nB) No\nAnswer: ").strip().upper()
     quiz3 = (
-        input("Which of the following is an odd number\nA) 10002\nB) 33771\nAnswer: ")
+        input("\nWhich of the following is an odd number\nA) 10002\nB) 33771\nAnswer: ")
         .strip()
         .upper()
     )
@@ -36,6 +36,16 @@ def quiz():
     return answer
 
 
-result = quiz()
-for value in result.values():
-    print(value)
+while True:
+    result = quiz()
+    for value in result.values():
+        print("\n", value)
+    while True:
+        retry = input("\nWould you like to retry? (Enter Y or N): ").strip().upper()
+        if retry == "N":
+            print("\nThank you for playing!")
+            exit()
+        elif retry == "Y":
+            break
+        else:
+            print("\nInvalid choice. Please enter 'Y' or 'N'.")
